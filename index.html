@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Intranet concept for Farmers Union Agency</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/public-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main id="main">
+<header class="intro">
+  <div class="wrap">
+    <p class="for">A concept for Farmers Union Agency. Sample content, not connected to your Microsoft 365.</p>
+    <h1>Your intranet, built from SharePoint parts your team can keep running</h1>
+    <p class="lede">Below is a working sketch of the homepage, Carrier Resource Center, directory and calendar for State Office staff, agents and leadership. Under it are the checks behind it: who sees what, the move of your existing files, brand contrast, and a template that builds the sites.</p>
+    <p class="byline">Prepared by Santiago</p>
+    <dl class="proof" id="proof">
+      <div><dt id="pf-tests">44 of 44</dt><dd>tests pass on the rules behind this page</dd></div>
+      <div><dt id="pf-mut">25 of 25</dt><dd>planted bugs caught by those tests</dd></div>
+      <div><dt id="pf-xsd">Validates</dt><dd>site template checked against the PnP schema 2022/09</dd></div>
+      <div><dt id="pf-drive">6,793 files</dt><dd>sample shared drive checked for SharePoint's limits</dd></div>
+    </dl>
+  </div>
+</header>
+
+<div class="controls" role="region" aria-label="Concept controls">
+  <div class="wrap">
+    <fieldset>
+      <legend>View as</legend>
+      <div class="seg" id="persona">
+        <label><input type="radio" name="persona" value="staff" checked><span>State Office staff</span></label>
+        <label><input type="radio" name="persona" value="agent"><span>Agent</span></label>
+        <label><input type="radio" name="persona" value="leader"><span>Leadership</span></label>
+      </div>
+    </fieldset>
+    <label class="switch"><input type="checkbox" id="annot"><span class="track" aria-hidden="true"></span>Show the SharePoint parts</label>
+    <span class="hint" id="persona-hint" aria-live="polite"></span>
+  </div>
+</div>
+
+<section class="frame" aria-label="Intranet concept">
+  <div class="wrap">
+    <p class="frame-note">Every block on this page is a standard SharePoint web part, so your marketing team edits it in the browser with no code. Turn on "Show the SharePoint parts" to see which one.</p>
+    <div class="sp" id="sp">
+      <div class="sp-suite">
+        <span class="waffle" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="app">SharePoint</span>
+        <div class="sp-search"><label class="sr-only" for="sp-q">Search the intranet (concept)</label><input id="sp-q" type="search" placeholder="Search this hub"></div>
+        <span class="sp-avatar" id="sp-avatar" aria-hidden="true">SO</span>
+      </div>
+      <header class="sp-header wp" data-wp="Hub site header" data-note="Standard layout, mega menu, strong theme background. Menu links can be shown to chosen groups only.">
+        <div class="sp-brand">
+          <span class="sp-logo" aria-hidden="true">Your<br>logo</span>
+          <span class="sp-title">FUA Intranet</span>
+        </div>
+        <nav class="sp-nav" id="sp-nav" aria-label="Intranet menu (concept)"></nav>
+        <div class="sp-mega" id="sp-mega" hidden></div>
+      </header>
+      <div class="sp-page" id="sp-page" tabindex="-1" role="region" aria-label="Concept page"></div>
+      <footer class="sp-footer">
+        <span>Farmers Union Agency intranet</span>
+        <span>Questions about this site: Agency Services</span>
+        <span>Concept with sample content</span>
+      </footer>
+    </div>
+  </div>
+</section>
+
+<section class="bench" id="bench" aria-labelledby="bench-h">
+  <div class="wrap">
+    <h2 id="bench-h">What's underneath</h2>
+    <p>These run in your browser on the same code the tests run. Nothing is sent anywhere.</p>
+
+    <div class="tabs" role="tablist" aria-label="Checks and plans">
+      <button role="tab" id="tab-move" aria-controls="panel-move" aria-selected="true">Content move check</button>
+      <button role="tab" id="tab-theme" aria-controls="panel-theme" aria-selected="false" tabindex="-1">Brand theme</button>
+      <button role="tab" id="tab-access" aria-controls="panel-access" aria-selected="false" tabindex="-1">Who sees what</button>
+      <button role="tab" id="tab-template" aria-controls="panel-template" aria-selected="false" tabindex="-1">Site template</button>
+      <button role="tab" id="tab-findings" aria-controls="panel-findings" aria-selected="false" tabindex="-1">Findings</button>
+      <button role="tab" id="tab-measured" aria-controls="panel-measured" aria-selected="false" tabindex="-1">Measured</button>
+    </div>
+
+    <!-- Content move -->
+    <div class="panel" role="tabpanel" id="panel-move" aria-labelledby="tab-move">
+      <h3>Find what SharePoint will refuse, before anything moves</h3>
+      <p>Your existing forms, guidelines and marketing files are probably in folders on a shared drive or in OneDrive. SharePoint refuses some names and paths outright. This check lists them and writes a rename plan you can review.</p>
+      <div class="field"><label for="mv-target">Destination in SharePoint (site and library)</label><input type="text" id="mv-target" value="sites/fua-resources/Forms" spellcheck="false"></div>
+      <div class="row">
+        <button class="btn" id="mv-sample">Check the sample drive</button>
+        <span class="btn ghost file-btn">Check a folder on this computer<input type="file" id="mv-folder" webkitdirectory directory multiple aria-label="Choose a folder on this computer to check"></span>
+      </div>
+      <p class="muted">A folder you choose is read in this browser tab for names and sizes only. No file is opened or uploaded.</p>
+      <div id="mv-out" aria-live="polite"></div>
+    </div>
+
+    <!-- Theme -->
+    <div class="panel" role="tabpanel" id="panel-theme" aria-labelledby="tab-theme" hidden>
+      <h3>Your brand color, as a SharePoint theme</h3>
+      <p>The green in the concept is a placeholder. Enter your brand color: the concept above recolors, and every pair SharePoint actually draws is checked for contrast.</p>
+      <div class="row bottom">
+        <div class="field"><label for="th-hex">Brand color</label><input type="text" id="th-hex" value="#2f6b3a" spellcheck="false" maxlength="7" aria-describedby="th-err"></div>
+        <input type="color" id="th-pick" value="#2f6b3a" aria-label="Pick a brand color">
+        <span id="th-err" class="muted" aria-live="polite"></span>
+      </div>
+      <div class="swatches" id="th-swatches" aria-label="Theme colors"></div>
+      <table class="data" id="th-table"><caption class="sr-only">Contrast checks</caption></table>
+      <p class="muted" id="th-neutral"></p>
+      <div class="row">
+        <button class="btn" id="th-ps">Download PowerShell (.ps1)</button>
+        <button class="btn ghost" id="th-json">Copy palette JSON</button>
+        <span class="muted" id="th-copied" aria-live="polite"></span>
+      </div>
+      <p class="muted">Your Microsoft 365 admin can also create the theme in the SharePoint brand center without PowerShell, and add your brand fonts there.</p>
+    </div>
+
+    <!-- Access -->
+    <div class="panel" role="tabpanel" id="panel-access" aria-labelledby="tab-access" hidden>
+      <h3>Who can open each site</h3>
+      <div class="scroll-x"><table class="data" id="ac-matrix"><caption class="sr-only">Access by role</caption></table></div>
+      <h3>The agent question</h3>
+      <p>Many intranets are shared with "Everyone except external users". That built-in group covers every account in your Microsoft 365 and no guest account. If any agent signs in with an outside email, they are a guest.</p>
+      <div class="scenario">
+        <fieldset><legend>Agents sign in with</legend>
+          <label><input type="radio" name="ac-acct" value="member" checked> A company Microsoft 365 account</label>
+          <label><input type="radio" name="ac-acct" value="guest"> Their own email, invited as a guest</label>
+        </fieldset>
+        <fieldset><legend>The intranet is shared with</legend>
+          <label><input type="radio" name="ac-share" value="groups" checked> The FUA Agents group, plus Staff and Leadership</label>
+          <label><input type="radio" name="ac-share" value="EEEU"> Everyone except external users</label>
+        </fieldset>
+      </div>
+      <div class="verdict" id="ac-verdict" aria-live="polite"></div>
+      <h3>Audiences</h3>
+      <p id="ac-aud"></p>
+    </div>
+
+    <!-- Template -->
+    <div class="panel" role="tabpanel" id="panel-template" aria-labelledby="tab-template" hidden>
+      <h3>The sites, built from one template file</h3>
+      <p>Rather than clicking each site together by hand, the structure is a PnP provisioning template generated from the same plan as the concept. It can be rebuilt in a test environment, reviewed, and re-applied.</p>
+      <ul id="tp-stats"></ul>
+      <p id="tp-valid"></p>
+      <div class="row">
+        <a class="btn" href="downloads/fua-intranet.xml" download>Download the template (.xml)</a>
+        <a class="btn ghost" href="downloads/rename-plan-sample.csv" download>Sample rename plan (.csv)</a>
+      </div>
+      <pre class="code" id="tp-cmd"></pre>
+      <div class="two">
+        <div><h3>The template creates</h3><ul id="tp-creates"></ul></div>
+        <div><h3>Done by hand in the build</h3><ul>
+          <li>Each web part's settings: sources, layouts, audiences</li>
+          <li>Your logo, hero images and real content</li>
+          <li>Marking the hub as your organization news site</li>
+          <li>Creating the four Entra groups and their members</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- Findings -->
+    <div class="panel" role="tabpanel" id="panel-findings" aria-labelledby="tab-findings" hidden>
+      <div id="fd-list"></div>
+    </div>
+
+    <!-- Measured -->
+    <div class="panel" role="tabpanel" id="panel-measured" aria-labelledby="tab-measured" hidden>
+      <div class="two">
+        <div><h3>Measured</h3><ul id="ms-yes"></ul></div>
+        <div><h3>Not measured</h3><ul>
+          <li>Nothing here ran in a real Microsoft 365 tenant. The template is checked against the schema, not applied.</li>
+          <li>Your real brand colors, fonts, logo and content.</li>
+          <li>Your real shared drive or current SharePoint. The check ran on a generated sample.</li>
+          <li>Whether your agents sign in as members or guests.</li>
+          <li>Search results, the SharePoint mobile app and Teams.</li>
+          <li>Speed with your real content and users.</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site"><div class="wrap">Concept prepared for a proposal. Not affiliated with or endorsed by Farmers Union Agency. Carrier names, people and news on this page are invented samples.</div></footer>
+
+<script type="module" src="app.mjs"></script>
+</body>
+</html>

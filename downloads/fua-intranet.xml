@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2022/09/ProvisioningSchema" Author="Santiago" Generator="fua-intranet engine" Version="1.0"
+                  DisplayName="Farmers Union Agency intranet (concept)" Description="Hub, carrier center, resources, department and leadership sites">
+  <pnp:Preferences Generator="fua-intranet engine">
+    <pnp:Parameters>
+      <pnp:Parameter Key="IntranetOwner">intranet.owner@yourdomain.com</pnp:Parameter>
+      <pnp:Parameter Key="GroupStaff">FUA State Office Staff</pnp:Parameter>
+      <pnp:Parameter Key="GroupAgents">FUA Agents</pnp:Parameter>
+      <pnp:Parameter Key="GroupLeaders">FUA Leadership</pnp:Parameter>
+      <pnp:Parameter Key="GroupPublishers">FUA Intranet Publishers</pnp:Parameter>
+    </pnp:Parameters>
+  </pnp:Preferences>
+  <pnp:Tenant>
+    <pnp:Themes>
+      <pnp:Theme Name="Farmers Union Agency" IsInverted="false" Overwrite="true">
+{
+  &quot;themePrimary&quot;: &quot;#2f6b3a&quot;,
+  &quot;themeLighterAlt&quot;: &quot;#f4f9f5&quot;,
+  &quot;themeLighter&quot;: &quot;#d3e7d6&quot;,
+  &quot;themeLight&quot;: &quot;#afd3b6&quot;,
+  &quot;themeTertiary&quot;: &quot;#6ea679&quot;,
+  &quot;themeSecondary&quot;: &quot;#3f7d4b&quot;,
+  &quot;themeDarkAlt&quot;: &quot;#2a6034&quot;,
+  &quot;themeDark&quot;: &quot;#24512c&quot;,
+  &quot;themeDarker&quot;: &quot;#1a3c21&quot;,
+  &quot;neutralLighterAlt&quot;: &quot;#faf9f8&quot;,
+  &quot;neutralLighter&quot;: &quot;#f3f2f1&quot;,
+  &quot;neutralLight&quot;: &quot;#edebe9&quot;,
+  &quot;neutralQuaternaryAlt&quot;: &quot;#e1dfdd&quot;,
+  &quot;neutralQuaternary&quot;: &quot;#d2d0ce&quot;,
+  &quot;neutralTertiaryAlt&quot;: &quot;#c8c6c4&quot;,
+  &quot;neutralTertiary&quot;: &quot;#a19f9d&quot;,
+  &quot;neutralSecondary&quot;: &quot;#605e5c&quot;,
+  &quot;neutralPrimaryAlt&quot;: &quot;#3b3a39&quot;,
+  &quot;neutralPrimary&quot;: &quot;#323130&quot;,
+  &quot;neutralDark&quot;: &quot;#201f1e&quot;,
+  &quot;black&quot;: &quot;#000000&quot;,
+  &quot;white&quot;: &quot;#ffffff&quot;
+}
+      </pnp:Theme>
+    </pnp:Themes>
+  </pnp:Tenant>
+  <pnp:Templates ID="FUA-TEMPLATES">
+    <pnp:ProvisioningTemplate ID="FUA-HOME" Version="1" Scope="RootSite">
+      <pnp:WebSettings Title="FUA Intranet" CommentsOnSitePagesDisabled="true" MembersCanShare="false" SearchScope="Hub" />
+      <pnp:Theme Name="Farmers Union Agency" IsInverted="false" />
+      <pnp:Security>
+        <pnp:AdditionalOwners>
+          <pnp:User Name="{parameter:IntranetOwner}" />
+        </pnp:AdditionalOwners>
+        <pnp:AdditionalMembers>
+          <pnp:User Name="{parameter:GroupPublishers}" />
+        </pnp:AdditionalMembers>
+        <pnp:AdditionalVisitors>
+          <pnp:User Name="{parameter:GroupStaff}" />
+          <pnp:User Name="{parameter:GroupAgents}" />
+          <pnp:User Name="{parameter:GroupLeaders}" />
+        </pnp:AdditionalVisitors>
+      </pnp:Security>
+      <pnp:Navigation AddNewPagesToNavigation="false" CreateFriendlyUrlsForNewPages="true" EnableAudienceTargeting="true">
+        <pnp:GlobalNavigation NavigationType="Structural">
+          <pnp:StructuralNavigation RemoveExistingNodes="true">
+            <pnp:NavigationNode Title="Home" Url="{hosturl}/sites/fua-intranet" IsExternal="false" />
+            <pnp:NavigationNode Title="Carriers" IsExternal="false">
+              <pnp:NavigationNode Title="All carriers" Url="{hosturl}/sites/fua-carriers" IsExternal="false" />
+              <pnp:NavigationNode Title="Underwriting guidelines" Url="{hosturl}/sites/fua-carriers/Underwriting" IsExternal="false" />
+              <pnp:NavigationNode Title="Applications &amp; forms" Url="{hosturl}/sites/fua-carriers/Applications" IsExternal="false" />
+              <pnp:NavigationNode Title="Carrier contacts" Url="{hosturl}/sites/fua-carriers/Lists/Carriers" IsExternal="false" />
+            </pnp:NavigationNode>
+            <pnp:NavigationNode Title="Resources" IsExternal="false">
+              <pnp:NavigationNode Title="Forms &amp; templates" Url="{hosturl}/sites/fua-resources/Forms" IsExternal="false" />
+              <pnp:NavigationNode Title="Marketing kit" Url="{hosturl}/sites/fua-resources/Marketing" IsExternal="false" />
+              <pnp:NavigationNode Title="Training &amp; webinars" Url="{hosturl}/sites/fua-resources/Training" IsExternal="false" />
+              <pnp:NavigationNode Title="Procedures" Url="{hosturl}/sites/fua-resources/Procedures" IsExternal="false" />
+            </pnp:NavigationNode>
+            <pnp:NavigationNode Title="News" IsExternal="false">
+              <pnp:NavigationNode Title="All news" Url="{hosturl}/sites/fua-intranet/SitePages/News.aspx" IsExternal="false" />
+              <pnp:NavigationNode Title="Agent spotlights" Url="{hosturl}/sites/fua-intranet/SitePages/Spotlights.aspx" IsExternal="false" />
+              <pnp:NavigationNode Title="Publish a news post" Url="{hosturl}/sites/fua-intranet/SitePages/Publish.aspx" IsExternal="false" />
+            </pnp:NavigationNode>
+            <pnp:NavigationNode Title="People" IsExternal="false">
+              <pnp:NavigationNode Title="Staff &amp; agent directory" Url="{hosturl}/sites/fua-intranet/SitePages/Directory.aspx" IsExternal="false" />
+              <pnp:NavigationNode Title="Office locations" Url="{hosturl}/sites/fua-intranet/Lists/Offices" IsExternal="false" />
+              <pnp:NavigationNode Title="Key contacts" Url="{hosturl}/sites/fua-intranet/SitePages/Contacts.aspx" IsExternal="false" />
+            </pnp:NavigationNode>
+            <pnp:NavigationNode Title="Departments" IsExternal="false">
+              <pnp:NavigationNode Title="Agency Operations" Url="{hosturl}/sites/fua-agency-operations" IsExternal="false" />
+              <pnp:NavigationNode Title="Leadership" Url="{hosturl}/sites/fua-leadership" IsExternal="false" />
+            </pnp:NavigationNode>
+            <pnp:NavigationNode Title="Calendar" Url="{hosturl}/sites/fua-intranet/SitePages/Calendar.aspx" IsExternal="false" />
+          </pnp:StructuralNavigation>
+        </pnp:GlobalNavigation>
+      </pnp:Navigation>
+      <pnp:SiteFields>
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000010}" Name="FuaOfficeCity" StaticName="FuaOfficeCity" DisplayName="City" Type="Text" Group="FUA Intranet" Indexed="TRUE" />
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000011}" Name="FuaOfficePhone" StaticName="FuaOfficePhone" DisplayName="Office phone" Type="Text" Group="FUA Intranet" />
+      </pnp:SiteFields>
+      <pnp:Lists>
+        <pnp:ListInstance Title="Events" Url="Lists/Events" TemplateType="106" OnQuickLaunch="false" EnableAudienceTargeting="true" />
+        <pnp:ListInstance Title="Offices" Url="Lists/Offices" TemplateType="100" OnQuickLaunch="false">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000010}" Name="FuaOfficeCity" DisplayName="City" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000011}" Name="FuaOfficePhone" DisplayName="Office phone" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+      </pnp:Lists>
+      <pnp:ClientSidePages>
+        <pnp:ClientSidePage PageName="Home.aspx" Title="Home" Layout="Home" Overwrite="true" Publish="true" EnableComments="false">
+          <pnp:Sections>
+          <pnp:Section Order="1" Type="OneColumn">
+            <pnp:Controls>
+              <pnp:CanvasControl WebPartType="Hero" Order="1" Column="1" JsonControlData="{}" />
+            </pnp:Controls>
+          </pnp:Section>
+          <pnp:Section Order="2" Type="TwoColumnLeft">
+            <pnp:Controls>
+              <pnp:CanvasControl WebPartType="News" Order="1" Column="1" JsonControlData="{}" />
+              <pnp:CanvasControl WebPartType="QuickLinks" Order="2" Column="2" JsonControlData="{}" />
+            </pnp:Controls>
+          </pnp:Section>
+          <pnp:Section Order="3" Type="TwoColumnLeft">
+            <pnp:Controls>
+              <pnp:CanvasControl WebPartType="ContentRollup" Order="1" Column="1" JsonControlData="{}" />
+              <pnp:CanvasControl WebPartType="Events" Order="2" Column="2" JsonControlData="{}" />
+            </pnp:Controls>
+          </pnp:Section>
+          <pnp:Section Order="4" Type="OneColumn">
+            <pnp:Controls>
+              <pnp:CanvasControl WebPartType="People" Order="1" Column="1" JsonControlData="{}" />
+            </pnp:Controls>
+          </pnp:Section>
+          </pnp:Sections>
+        </pnp:ClientSidePage>
+      </pnp:ClientSidePages>
+      <pnp:Header Layout="Standard" MenuStyle="MegaMenu" BackgroundEmphasis="Strong" ShowSiteTitle="true" ShowSiteNavigation="true" />
+    </pnp:ProvisioningTemplate>
+    <pnp:ProvisioningTemplate ID="FUA-CARRIERS" Version="1" Scope="RootSite">
+      <pnp:WebSettings Title="Carrier Resource Center" CommentsOnSitePagesDisabled="true" MembersCanShare="false" HubSiteUrl="{hosturl}/sites/fua-intranet" SearchScope="Hub" />
+      <pnp:Theme Name="Farmers Union Agency" IsInverted="false" />
+      <pnp:Security>
+        <pnp:AdditionalOwners>
+          <pnp:User Name="{parameter:IntranetOwner}" />
+        </pnp:AdditionalOwners>
+        <pnp:AdditionalMembers>
+          <pnp:User Name="{parameter:GroupPublishers}" />
+        </pnp:AdditionalMembers>
+        <pnp:AdditionalVisitors>
+          <pnp:User Name="{parameter:GroupStaff}" />
+          <pnp:User Name="{parameter:GroupAgents}" />
+          <pnp:User Name="{parameter:GroupLeaders}" />
+        </pnp:AdditionalVisitors>
+      </pnp:Security>
+      <pnp:SiteFields>
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000001}" Name="FuaLines" StaticName="FuaLines" DisplayName="Lines of business" Type="MultiChoice" Group="FUA Intranet"><CHOICES><CHOICE>Personal auto</CHOICE><CHOICE>Home</CHOICE><CHOICE>Farm &amp; ranch</CHOICE><CHOICE>Commercial</CHOICE><CHOICE>Crop</CHOICE><CHOICE>Life &amp; health</CHOICE></CHOICES></Field>
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000002}" Name="FuaPortalUrl" StaticName="FuaPortalUrl" DisplayName="Agent portal" Type="URL" Group="FUA Intranet" Format="Hyperlink" />
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000003}" Name="FuaGuideUrl" StaticName="FuaGuideUrl" DisplayName="Underwriting guide" Type="URL" Group="FUA Intranet" Format="Hyperlink" />
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000004}" Name="FuaRepName" StaticName="FuaRepName" DisplayName="Rep name" Type="Text" Group="FUA Intranet" />
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000005}" Name="FuaRepEmail" StaticName="FuaRepEmail" DisplayName="Rep email" Type="Text" Group="FUA Intranet" />
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000006}" Name="FuaRepPhone" StaticName="FuaRepPhone" DisplayName="Rep phone" Type="Text" Group="FUA Intranet" />
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000007}" Name="FuaCarrier" StaticName="FuaCarrier" DisplayName="Carrier" Type="Text" Group="FUA Intranet" Indexed="TRUE" />
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000009}" Name="FuaLine" StaticName="FuaLine" DisplayName="Line of business" Type="Choice" Group="FUA Intranet" Indexed="TRUE"><CHOICES><CHOICE>Personal auto</CHOICE><CHOICE>Home</CHOICE><CHOICE>Farm &amp; ranch</CHOICE><CHOICE>Commercial</CHOICE><CHOICE>Crop</CHOICE><CHOICE>Life &amp; health</CHOICE></CHOICES></Field>
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000008}" Name="FuaDocType" StaticName="FuaDocType" DisplayName="Document type" Type="Choice" Group="FUA Intranet" Indexed="TRUE"><CHOICES><CHOICE>Application</CHOICE><CHOICE>Underwriting guideline</CHOICE><CHOICE>Rate sheet</CHOICE><CHOICE>Form</CHOICE><CHOICE>Brochure</CHOICE></CHOICES></Field>
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a00000a}" Name="FuaEffective" StaticName="FuaEffective" DisplayName="Effective date" Type="DateTime" Group="FUA Intranet" Format="DateOnly" />
+      </pnp:SiteFields>
+      <pnp:Lists>
+        <pnp:ListInstance Title="Carriers" Url="Lists/Carriers" TemplateType="100" OnQuickLaunch="false">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000001}" Name="FuaLines" DisplayName="Lines of business" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000002}" Name="FuaPortalUrl" DisplayName="Agent portal" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000003}" Name="FuaGuideUrl" DisplayName="Underwriting guide" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000004}" Name="FuaRepName" DisplayName="Rep name" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000005}" Name="FuaRepEmail" DisplayName="Rep email" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000006}" Name="FuaRepPhone" DisplayName="Rep phone" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Underwriting" Url="Underwriting" TemplateType="101" OnQuickLaunch="false" EnableVersioning="true" MaxVersionLimit="100" EnableAudienceTargeting="true">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000007}" Name="FuaCarrier" DisplayName="Carrier" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000009}" Name="FuaLine" DisplayName="Line of business" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000008}" Name="FuaDocType" DisplayName="Document type" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a00000a}" Name="FuaEffective" DisplayName="Effective date" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Applications" Url="Applications" TemplateType="101" OnQuickLaunch="false" EnableVersioning="true" MaxVersionLimit="100">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000007}" Name="FuaCarrier" DisplayName="Carrier" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000009}" Name="FuaLine" DisplayName="Line of business" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000008}" Name="FuaDocType" DisplayName="Document type" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a00000a}" Name="FuaEffective" DisplayName="Effective date" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+    <pnp:ProvisioningTemplate ID="FUA-RESOURCES" Version="1" Scope="RootSite">
+      <pnp:WebSettings Title="Agent &amp; Employee Resources" CommentsOnSitePagesDisabled="true" MembersCanShare="false" HubSiteUrl="{hosturl}/sites/fua-intranet" SearchScope="Hub" />
+      <pnp:Theme Name="Farmers Union Agency" IsInverted="false" />
+      <pnp:Security>
+        <pnp:AdditionalOwners>
+          <pnp:User Name="{parameter:IntranetOwner}" />
+        </pnp:AdditionalOwners>
+        <pnp:AdditionalMembers>
+          <pnp:User Name="{parameter:GroupPublishers}" />
+        </pnp:AdditionalMembers>
+        <pnp:AdditionalVisitors>
+          <pnp:User Name="{parameter:GroupStaff}" />
+          <pnp:User Name="{parameter:GroupAgents}" />
+          <pnp:User Name="{parameter:GroupLeaders}" />
+        </pnp:AdditionalVisitors>
+      </pnp:Security>
+      <pnp:SiteFields>
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000008}" Name="FuaDocType" StaticName="FuaDocType" DisplayName="Document type" Type="Choice" Group="FUA Intranet" Indexed="TRUE"><CHOICES><CHOICE>Application</CHOICE><CHOICE>Underwriting guideline</CHOICE><CHOICE>Rate sheet</CHOICE><CHOICE>Form</CHOICE><CHOICE>Brochure</CHOICE></CHOICES></Field>
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a00000e}" Name="FuaDepartment" StaticName="FuaDepartment" DisplayName="Department" Type="Choice" Group="FUA Intranet" Indexed="TRUE"><CHOICES><CHOICE>Agency Operations</CHOICE><CHOICE>Accounting</CHOICE><CHOICE>Marketing</CHOICE><CHOICE>Licensing</CHOICE><CHOICE>Leadership</CHOICE></CHOICES></Field>
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a00000b}" Name="FuaAssetType" StaticName="FuaAssetType" DisplayName="Asset type" Type="Choice" Group="FUA Intranet" Indexed="TRUE"><CHOICES><CHOICE>Logo</CHOICE><CHOICE>Social post</CHOICE><CHOICE>Print ad</CHOICE><CHOICE>Email template</CHOICE><CHOICE>Brochure</CHOICE></CHOICES></Field>
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000009}" Name="FuaLine" StaticName="FuaLine" DisplayName="Line of business" Type="Choice" Group="FUA Intranet" Indexed="TRUE"><CHOICES><CHOICE>Personal auto</CHOICE><CHOICE>Home</CHOICE><CHOICE>Farm &amp; ranch</CHOICE><CHOICE>Commercial</CHOICE><CHOICE>Crop</CHOICE><CHOICE>Life &amp; health</CHOICE></CHOICES></Field>
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a00000c}" Name="FuaExpires" StaticName="FuaExpires" DisplayName="Use until" Type="DateTime" Group="FUA Intranet" Format="DateOnly" />
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a00000d}" Name="FuaTopic" StaticName="FuaTopic" DisplayName="Topic" Type="Choice" Group="FUA Intranet" Indexed="TRUE"><CHOICES><CHOICE>Products</CHOICE><CHOICE>Systems</CHOICE><CHOICE>Sales</CHOICE><CHOICE>Compliance</CHOICE><CHOICE>Onboarding</CHOICE></CHOICES></Field>
+        <Field ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a00000f}" Name="FuaReviewDate" StaticName="FuaReviewDate" DisplayName="Next review" Type="DateTime" Group="FUA Intranet" Format="DateOnly" />
+      </pnp:SiteFields>
+      <pnp:Lists>
+        <pnp:ListInstance Title="Forms" Url="Forms" TemplateType="101" OnQuickLaunch="false" EnableVersioning="true" MaxVersionLimit="100">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000008}" Name="FuaDocType" DisplayName="Document type" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a00000e}" Name="FuaDepartment" DisplayName="Department" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Marketing" Url="Marketing" TemplateType="101" OnQuickLaunch="false" EnableVersioning="true" MaxVersionLimit="100" EnableAudienceTargeting="true">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a00000b}" Name="FuaAssetType" DisplayName="Asset type" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000009}" Name="FuaLine" DisplayName="Line of business" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a00000c}" Name="FuaExpires" DisplayName="Use until" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Training" Url="Training" TemplateType="101" OnQuickLaunch="false" EnableVersioning="true" MaxVersionLimit="100">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a00000d}" Name="FuaTopic" DisplayName="Topic" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a000009}" Name="FuaLine" DisplayName="Line of business" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+        <pnp:ListInstance Title="Procedures" Url="Procedures" TemplateType="101" OnQuickLaunch="false" EnableVersioning="true" MaxVersionLimit="100">
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a00000e}" Name="FuaDepartment" DisplayName="Department" />
+            <pnp:FieldRef ID="{6f1c2a10-1d0e-4b7a-9a51-0c4f1a00000f}" Name="FuaReviewDate" DisplayName="Next review" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+    <pnp:ProvisioningTemplate ID="FUA-OPERATIONS" Version="1" Scope="RootSite">
+      <pnp:WebSettings Title="Agency Operations" CommentsOnSitePagesDisabled="true" MembersCanShare="false" HubSiteUrl="{hosturl}/sites/fua-intranet" SearchScope="Hub" />
+      <pnp:Theme Name="Farmers Union Agency" IsInverted="false" />
+      <pnp:Security>
+        <pnp:AdditionalOwners>
+          <pnp:User Name="{parameter:IntranetOwner}" />
+        </pnp:AdditionalOwners>
+        <pnp:AdditionalMembers>
+          <pnp:User Name="{parameter:GroupStaff}" />
+        </pnp:AdditionalMembers>
+        <pnp:AdditionalVisitors>
+          <pnp:User Name="{parameter:GroupStaff}" />
+          <pnp:User Name="{parameter:GroupLeaders}" />
+        </pnp:AdditionalVisitors>
+      </pnp:Security>
+    </pnp:ProvisioningTemplate>
+    <pnp:ProvisioningTemplate ID="FUA-LEADERSHIP" Version="1" Scope="RootSite">
+      <pnp:WebSettings Title="Leadership" CommentsOnSitePagesDisabled="true" MembersCanShare="false" HubSiteUrl="{hosturl}/sites/fua-intranet" SearchScope="Hub" />
+      <pnp:Theme Name="Farmers Union Agency" IsInverted="false" />
+      <pnp:Security>
+        <pnp:AdditionalOwners>
+          <pnp:User Name="{parameter:IntranetOwner}" />
+        </pnp:AdditionalOwners>
+        <pnp:AdditionalMembers>
+          <pnp:User Name="{parameter:GroupLeaders}" />
+        </pnp:AdditionalMembers>
+        <pnp:AdditionalVisitors>
+          <pnp:User Name="{parameter:GroupLeaders}" />
+        </pnp:AdditionalVisitors>
+      </pnp:Security>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+  <pnp:Sequence ID="FUA-SEQUENCE">
+    <pnp:SiteCollections>
+      <pnp:SiteCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="pnp:CommunicationSite" ProvisioningId="FUA.home" Title="FUA Intranet" Description="FUA Intranet, part of the Farmers Union Agency intranet" IsHubSite="true" Language="1033" Url="{hosturl}/sites/fua-intranet" Owner="{parameter:IntranetOwner}" AllowFileSharingForGuestUsers="false">
+        <pnp:Templates>
+          <pnp:ProvisioningTemplateReference ID="FUA-HOME" />
+        </pnp:Templates>
+      </pnp:SiteCollection>
+      <pnp:SiteCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="pnp:CommunicationSite" ProvisioningId="FUA.carriers" Title="Carrier Resource Center" Description="Carrier Resource Center, part of the Farmers Union Agency intranet" IsHubSite="false" Language="1033" Url="{hosturl}/sites/fua-carriers" Owner="{parameter:IntranetOwner}" AllowFileSharingForGuestUsers="false">
+        <pnp:Templates>
+          <pnp:ProvisioningTemplateReference ID="FUA-CARRIERS" />
+        </pnp:Templates>
+      </pnp:SiteCollection>
+      <pnp:SiteCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="pnp:CommunicationSite" ProvisioningId="FUA.resources" Title="Agent &amp; Employee Resources" Description="Agent &amp; Employee Resources, part of the Farmers Union Agency intranet" IsHubSite="false" Language="1033" Url="{hosturl}/sites/fua-resources" Owner="{parameter:IntranetOwner}" AllowFileSharingForGuestUsers="false">
+        <pnp:Templates>
+          <pnp:ProvisioningTemplateReference ID="FUA-RESOURCES" />
+        </pnp:Templates>
+      </pnp:SiteCollection>
+      <pnp:SiteCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="pnp:TeamSite" ProvisioningId="FUA.operations" Title="Agency Operations" Description="Agency Operations, part of the Farmers Union Agency intranet" IsHubSite="false" Language="1033" Alias="fua-agency-operations" DisplayName="Agency Operations" IsPublic="false" Teamify="true">
+        <pnp:Templates>
+          <pnp:ProvisioningTemplateReference ID="FUA-OPERATIONS" />
+        </pnp:Templates>
+      </pnp:SiteCollection>
+      <pnp:SiteCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="pnp:TeamSite" ProvisioningId="FUA.leadership" Title="Leadership" Description="Leadership, part of the Farmers Union Agency intranet" IsHubSite="false" Language="1033" Alias="fua-leadership" DisplayName="Leadership" IsPublic="false" Teamify="true">
+        <pnp:Templates>
+          <pnp:ProvisioningTemplateReference ID="FUA-LEADERSHIP" />
+        </pnp:Templates>
+      </pnp:SiteCollection>
+    </pnp:SiteCollections>
+  </pnp:Sequence>
+</pnp:Provisioning>

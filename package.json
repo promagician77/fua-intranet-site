@@ -1,0 +1,7 @@
+{
+  "name": "fua-intranet-concept",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static intranet concept for Farmers Union Agency. No build step.",
+  "scripts": { "start": "npx serve ." }
+}
